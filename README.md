@@ -2,7 +2,7 @@
 
 ## Step 1 - Enumeration
 ### Directory fuzzing
-https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dirsearch.txt
+Directory fuzzing list [here](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dirsearch.txt)
 
 ### Directory fuzzing
 
@@ -21,6 +21,9 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dir
 ### Race conditions
 ### Server-side request forge (SSRF)
 ### Path traversal
+#### LFI fuzzing
+Fuzzing list [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-Jhaddix.txt)
+
 ### XXE Injection
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -42,7 +45,7 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dir
 ### OAuth authentication
 ### JWT attacks
 #### Brute force key
-Word list that may be used : https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
+Word list [here](https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list)
 ```
 hashcat -a 0 -m 16500 <jwt> <wordlist>
 ```
