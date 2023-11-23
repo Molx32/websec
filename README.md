@@ -41,4 +41,9 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dir
 ### HTTP request smuggling
 ### OAuth authentication
 ### JWT attacks
+#### Brute force key
+Word list that may be used : https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
+```
+hashcat -a 0 -m 16500 <jwt> <wordlist>
+```
 ### Prototype pollution
