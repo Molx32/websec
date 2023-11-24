@@ -6,8 +6,15 @@ Directory fuzzing list [here](https://github.com/danielmiessler/SecLists/blob/ma
 
 ### Directory fuzzing
 
+## Step 2 - Identify sensitive features
+### Password
+- Password reset
+- Password change
 
-## Step 2 - Identify vulnrabilities
+### User data
+- Email change
+
+## Step 3 - Identify vulnrabilities
 ### SQL injections
 ### NoSQL injections
 ### Authentication
