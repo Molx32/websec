@@ -48,6 +48,8 @@ Fuzzing list [here](https://raw.githubusercontent.com/danielmiessler/SecLists/ma
 ### Server-side template injection
 ### Web cache poisoning
 ### HTTP Host header attacks
+#### Check reflection in response headers
+
 ### HTTP request smuggling
 ### OAuth authentication
 ### JWT attacks
