@@ -88,3 +88,16 @@ Word list [here](https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.
 hashcat -a 0 -m 16500 <jwt> <wordlist>
 ```
 ### Prototype pollution
+
+
+
+## Various
+### Work with hash
+#### Identify hash
+Dcode tool to identify hash [here](https://www.dcode.fr/identification-hash).
+#### Crack hash
+Online tool - [Crack station](https://crackstation.net)
+#### Calculate hash
+Online tool - [CyberChef](https://gchq.github.io/CyberChef)
+
+#### Brute force hash
