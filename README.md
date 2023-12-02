@@ -57,6 +57,17 @@ Fuzzing list [here](https://raw.githubusercontent.com/danielmiessler/SecLists/ma
 </html>
 ```
 #### CSRF using Javascript XMLHTTPRequest()
+```
+// GET request
+const req = new XMLHttpRequest();
+req.open("GET", "http://www.example.org/example.txt");
+req.send();
+
+// POST request
+formData="a=test&b=value";
+xhr.open("POST", "/article/xmlhttprequest/post/user");
+xhr.send(formData);
+```
 #### CSRF using Javascript HTML
 ```
 <html>
