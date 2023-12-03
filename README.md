@@ -89,6 +89,17 @@ xhr.send();
 ### DOM-based vulnerabilities
 ### WebSockets
 ### Insecure deserialization
+#### Java
+##### Install JDK 11
+1. Download from [Oracle website](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
+2. Install (default path in C:\Program Files\Java\jdk-11)
+3. Make sure environment variable JAVA_HOME is set to C:\Program Files\Java\jdk-11
+
+##### Exploit
+###### OOBs exploits
+Leverage Python wrapper to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
+
+#### Others
 ### GraphQL API vulnerabilities
 ### Server-side template injection
 ### Web cache poisoning
