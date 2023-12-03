@@ -97,7 +97,7 @@ xhr.send();
 
 ##### Exploit
 ###### OOBs exploits
-Leverage Python wrapper to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
+Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserialization/ysoserial.py) to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
 
 #### Others
 ### GraphQL API vulnerabilities
