@@ -90,10 +90,11 @@ xhr.send();
 ### WebSockets
 ### Insecure deserialization
 #### Java
-##### Install JDK 11
-1. Download from [Oracle website](https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html)
-2. Install (default path in C:\Program Files\Java\jdk-11)
-3. Make sure environment variable JAVA_HOME is set to C:\Program Files\Java\jdk-11
+##### Install JDK 8
+1. Download from [Oracle website](https://www.oracle.com/fr/java/technologies/javase/javase8-archive-downloads.html)
+2. Install Burp extension Java Deserialization Scanner
+3. Extension - Configure Java path to `C:\Program Files\Java\jdk1.8.0_202\java.exe`
+4. Extension - Configure Ysoserial path to `C:\Users\cleme\Documents\01 - Bugbounty\TRAINING\YSOSERIAL\ysoserial-all.jar`
 
 ##### Exploit
 ###### OOBs exploits
