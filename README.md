@@ -105,6 +105,9 @@ Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserializa
 ### Server-side template injection
 ### Web cache poisoning
 ### HTTP Host header attacks
+#### Automated scan
+1. Run Param Miner extension with all scans
+2. Run `can selected insertion point` on the host header
 #### Check reflection in response headers
 
 ### HTTP request smuggling
