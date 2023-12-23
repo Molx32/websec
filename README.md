@@ -36,7 +36,9 @@ Run a first scan with all modules in order to check which are the different serv
 Then modules must be unselectioned in order to focus on unfiltered requests.
 
 #### Second scan
-This time, configure _ReDownloader parser options_ to make the extension fetch the file after it is uploaded. It will allow the extension to report any successful injection to the dashboard.
+Run a second scan that by configuring :
+- Exclusion of previously identified filtered requests
+- _ReDownloader parser options_ to make the extension fetch the file after it is uploaded. It will allow the extension to report any successful injection to the dashboard.
 
 ### Race conditions
 ### Server-side request forge (SSRF)
