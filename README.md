@@ -28,6 +28,16 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 ### Access control
 ### Command injection
 ### File upload
+_Burp suite extension : Upload Scanner_
+#### First scan
+Run a first scan with all modules in order to check which are the different server responses. Based on those responses, we must determine :
+- Which magic numbers are filtered
+- Which file extensions are filtered
+Then modules must be unselectioned in order to focus on unfiltered requests.
+
+#### Second scan
+This time, configure _ReDownloader parser options_ to make the extension fetch the file after it is uploaded. It will allow the extension to report any successful injection to the dashboard.
+
 ### Race conditions
 ### Server-side request forge (SSRF)
 ### Path traversal
