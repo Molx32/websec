@@ -40,6 +40,11 @@ Run a second scan that by configuring :
 - Exclusion of previously identified filtered requests
 - _ReDownloader parser options_ to make the extension fetch the file after it is uploaded. It will allow the extension to report any successful injection to the dashboard.
 
+#### Manual scan
+Try to test the following :
+- Path traversal with file name, in order to try to execute the file from another directory
+- SSRF with filename
+
 ### Race conditions
 ### Server-side request forge (SSRF)
 ### Path traversal
