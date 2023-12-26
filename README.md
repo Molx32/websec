@@ -145,6 +145,16 @@ Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserializa
 #### Check reflection in response headers
 
 ### HTTP request smuggling
+_Burp suite extensions :
+- Param miner
+- HTTP Request Smuggler_
+#### Step 1 - Scan
+- Use the **Param Miner** (all options)
+- Use the **HTTP Request Smuggler** (all options)
+- Use the built-in scanner : right-click the **Host** header value and scan the selected insertion point.
+
+#### Step 2 - Exploit
+
 ### OAuth authentication
 ### JWT attacks
 #### Brute force key
