@@ -15,6 +15,7 @@ The follwing extensions may be useful :
 - HTTP Request smuggler
 - JWT Editor
 - Active Scan ++
+- Logger ++
 - CORS*
 
 # Methodology
