@@ -1,3 +1,22 @@
+# Configure
+## General settings
+### Scope
+- Configure **HTTP Proxy** to _show_ in-scope items only
+- Configure **Logger** to _capture_ in-scope items only
+- Configure **Logger** to _show_ in-scope items only
+
+## Extensions
+The follwing extensions may be useful :
+- Authorize
+- Upload scanner
+- Param miner
+- Turbo intruder
+- Collaborator everywhere
+- HTTP Request smuggler
+- JWT Editor
+- Active Scan ++
+- CORS*
+
 # Methodology
 
 ## Step 1 - Enumeration
@@ -29,6 +48,8 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 ### Command injection
 ### File upload
 _Burp suite extension : Upload Scanner_
+<ins>Important</ins> : when identifying vulnerabilities with this extension, it may not reveal the real request is the _issue_ pane. To get the real request sent, copy paste the filename that was sent (usually a randomly generated filename), and search for it in Logger.
+
 #### First scan
 Run a first scan with all modules in order to check which are the different server responses. Based on those responses, we must determine :
 - Which magic numbers are filtered
