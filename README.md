@@ -206,7 +206,8 @@ _Burp suite extensions : Param miner | HTTP Request Smuggler_
 ### JWT attacks    
 _Burp suite extensions : JWT Editor_
 #### Unverified signature
-This attack only requires to change the current username (or other values) in the token. For example :
+This attack only requires to change the current username (or other values) in the token. Just modify the JWT content without modifying anything else.
+Example :
 ```
 {
     "iss": "portswigger",
@@ -218,10 +219,17 @@ This attack only requires to change the current username (or other values) in th
 ```
 {
     "iss": "portswigger",
-    "sub": "wiener",
+    "sub": "administrator",
     "exp": 1703788096
 }
 ```
+#### Signature exploits
+##### None signature
+Send the request to _Repeater_ and go to _JWT Editor_ tab.
+1. Click on **Attack**
+2. Select **"none" Signing Algorithm**
+3. Send different requests each proposed value (["none", "None", "NONE", "nOnE"])
+
 #### Brute force key
 Word list [here](https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list)
 ```
