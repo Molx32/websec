@@ -62,9 +62,9 @@ Run a second scan that by configuring :
 - _ReDownloader parser options_ to make the extension fetch the file after it is uploaded. It will allow the extension to report any successful injection to the dashboard.
 
 #### Manual scan
-Try to test the following :
-- Path traversal with file name, in order to try to execute the file from another directory
-- SSRF with filename
+Manual scan is needed because the extension can't test some cases :
+- Upload a file to a different directory (e.g. using **../** or **..%2f**). The alternative directory may not handle the image in a secure way.
+- SSRF with filename (check with collaborator everywhere?)
 
 ### Race conditions
 ### Server-side request forge (SSRF)
