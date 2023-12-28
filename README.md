@@ -86,7 +86,9 @@ Manual scan is needed because the extension can't test some cases :
 - If automated scan showed that EXIF injection is possible :
     - Use an ExifTool to modify the file uploaded
     - Modify the file directly in code c.f.
-![alt text]([http://url/to/img.png](https://github.com/Molx32/websec/blob/main/img/fileuploadexif.png))
+![Burp showing PHP RCE via EXIF](https://github.com/Molx32/websec/blob/main/img/fileuploadexif.png)
+
+https://raw.githubusercontent.com/Molx32/websec/main/img/fileuploadexif.png?token=GHSAT0AAAAAACKU2J7AWJ3MUFF6EAC2T32SZMNWC3Q
 - SSRF with filename (check with collaborator everywhere?)
 
 ### Race conditions
