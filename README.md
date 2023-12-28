@@ -203,7 +203,25 @@ _Burp suite extensions : Param miner | HTTP Request Smuggler_
 #### Step 2 - Exploit
 
 ### OAuth authentication
-### JWT attacks
+### JWT attacks    
+_Burp suite extensions : JWT Editor_
+#### Unverified signature
+This attack only requires to change the current username (or other values) in the token. For example :
+```
+{
+    "iss": "portswigger",
+    "sub": "wiener",
+    "exp": 1703788096
+}
+```
+...becomes...
+```
+{
+    "iss": "portswigger",
+    "sub": "wiener",
+    "exp": 1703788096
+}
+```
 #### Brute force key
 Word list [here](https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list)
 ```
