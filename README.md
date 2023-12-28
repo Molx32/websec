@@ -54,8 +54,10 @@ _Burp suite extension : Upload Scanner_
 #### Manual - Identify filtered extensions
 Send the upload request to _Intruder_, then 
 1. Add the file extension as the string to fuzz _e.g._ `filename="file.$jpg$"`
-2. In the payload list, choose "all extensions" and run the attack
-3. Check the responses status code and/or length to identify filtered extensions.
+2. In the payload list, choose "File extensions - Full"
+3. Add %00 to the list for null extensions
+4. Run the attack
+5. Check the responses status code and/or length to identify filtered extensions.
 The extensions identified here must be excluded from the automated scan.
 
 #### First scan
