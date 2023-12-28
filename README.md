@@ -55,10 +55,17 @@ _Burp suite extension : Upload Scanner_
 Send the upload request to _Intruder_, then 
 1. Add the file extension as the string to fuzz _e.g._ `filename="file.$jpg$"`
 2. In the payload list, choose "File extensions - Full"
-3. Add %00 to the list for null extensions
-4. Run the attack
-5. Check the responses status code and/or length to identify filtered extensions.
+3. Run the attack in _Sniper mode_
+4. Check the responses status code and/or length to identify filtered extensions.
 The extensions identified here must be excluded from the automated scan.
+
+#### Manual - Identify extension filtering bypass with null-byte
+This time, we want to use the null-byte to check if filtered extensions are accepted. For that, we want to fuzz all extensions and append a string like `%00.jpg` where `jpg` must be replaced by any allowed extension.
+Send the upload request to _Intruder_, then 
+1. Add the file extension as the string to fuzz _e.g._ `filename="file.$filtered_extension$%00.jpg"`
+2. In the payload list set 1, choose "File extensions - Full"
+3. Run the attack in _Sniper_ mode
+4. Check the responses status code and/or length to filters bypass.
 
 #### First scan
 Run a first scan with all modules in order to check which are the different server responses. Based on those responses, we must determine :
