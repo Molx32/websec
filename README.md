@@ -48,7 +48,15 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 ### Command injection
 ### File upload
 _Burp suite extension : Upload Scanner_
+
 <ins>Important</ins> : when identifying vulnerabilities with this extension, it may not reveal the real request is the _issue_ pane. To get the real request sent, copy paste the filename that was sent (usually a randomly generated filename), and search for it in Logger.
+
+#### Manual - Identify filtered extensions
+Send the upload request to _Intruder_, then 
+1. Add the file extension as the string to fuzz _e.g._ `filename="file.$jpg$"`
+2. In the payload list, choose "all extensions" and run the attack
+3. Check the responses status code and/or length to identify filtered extensions.
+The extensions identified here must be excluded from the automated scan.
 
 #### First scan
 Run a first scan with all modules in order to check which are the different server responses. Based on those responses, we must determine :
