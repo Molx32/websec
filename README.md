@@ -51,8 +51,8 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 _Burp suite extension : Upload Scanner_
 
 <ins>Important</ins> : when identifying vulnerabilities with this extension, it may not reveal the real request is the _issue_ pane. To get the real request sent, copy paste the filename that was sent (usually a randomly generated filename), and search for it in Logger.
-
-#### Manual - Identify filtered extensions
+#### Basics
+##### Manual - Identify filtered extensions
 Send the upload request to _Intruder_, then 
 1. Add the file extension as the string to fuzz _e.g._ `filename="file.$jpg$"`
 2. In the payload list, choose "File extensions - Full"
@@ -60,7 +60,7 @@ Send the upload request to _Intruder_, then
 4. Check the responses status code and/or length to identify filtered extensions.
 The extensions identified here must be excluded from the automated scan.
 
-#### Manual - Identify extension filtering bypass with null-byte
+##### Manual - Identify extension filtering bypass with null-byte
 This time, we want to use the null-byte to check if filtered extensions are accepted. For that, we want to fuzz all extensions and append a string like `%00.jpg` where `jpg` must be replaced by any allowed extension.
 Send the upload request to _Intruder_, then 
 1. Add the file extension as the string to fuzz _e.g._ `filename="file.$filtered_extension$%00.jpg"`
@@ -68,20 +68,25 @@ Send the upload request to _Intruder_, then
 3. Run the attack in _Sniper_ mode
 4. Check the responses status code and/or length to filters bypass.
 
-#### First scan
+#### Automation
+##### First scan
 Run a first scan with all modules in order to check which are the different server responses. Based on those responses, we must determine :
 - Which magic numbers are filtered
 - Which file extensions are filtered
 Then modules must be unselectioned in order to focus on unfiltered requests.
 
-#### Second scan
+##### Second scan
 Run a second scan that by configuring :
 - Exclusion of previously identified filtered requests
 - _ReDownloader parser options_ to make the extension fetch the file after it is uploaded. It will allow the extension to report any successful injection to the dashboard.
 
-#### Manual scan
+#### Advanced
 Manual scan is needed because the extension can't test some cases :
 - Upload a file to a different directory (e.g. using **../** or **..%2f**). The alternative directory may not handle the image in a secure way.
+- If automated scan showed that EXIF injection is possible :
+    - Use an ExifTool to modify the file uploaded
+    - Modify the file directly in code c.f.
+![alt text](http://url/to/img.png)
 - SSRF with filename (check with collaborator everywhere?)
 
 ### Race conditions
