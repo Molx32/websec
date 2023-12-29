@@ -186,6 +186,9 @@ Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserializa
 #### Others
 ### GraphQL API vulnerabilities
 ### Server-side template injection
+_Burp suite extensions : tplmap_
+Note : Burp suite scanner, including _Active Scan ++_ extension are not able to test for all SSTI vulnerabilities.
+
 ### Web cache poisoning
 ### HTTP Host header attacks
 #### Automated scan
