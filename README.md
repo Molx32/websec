@@ -218,6 +218,7 @@ Send the request to _Intruder_, then
 4. In the Resource pool, configure a **Delay between requests** fixed to 1000ms
 5. Run the attack in _Sniper mode_
 6. Check the responses status code and/or length to identify response.
+Check all the results to see if the injection was sucessful. If it is, modify it to exploit it.
 
 ### Web cache poisoning
 ### HTTP Host header attacks
