@@ -189,7 +189,10 @@ Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserializa
 _Burp suite extensions : None_
 _Third party tool : [SSTImap](https://github.com/vladko312/SSTImap)_
 
-#### Automated - Using SSTI Map
+First order SSTI : when the detection is done on the HTTP reponse.
+Second order SSTI : when the detection is done elsewhere _e.g._ on another page.
+
+#### First order SSTI - Automated - Using SSTI Map
 ```
 # Step 1 - Simple scan, injection being on *
 python3 sstimap.py -e ERB --url https://0a4600cd04e18ff880924e140087006a.web-security-academy.net/?message=*
@@ -197,10 +200,24 @@ python3 sstimap.py -e ERB --url https://0a4600cd04e18ff880924e140087006a.web-sec
 # Step 2 - Based on results, chose a payload, here OD shell
 python3 sstimap.py -e ERB --url https://0a4600cd04e18ff880924e140087006a.web-security-academy.net/?message=* --os-shell
 ```
-#### Manual - Intruder
+#### First order SSTI - Manual - Intruder
+Send the request to _Intruder_, then 
+1. Add the injection point
+2. In the payload list, choose "Fuzzing - template injection"
+3. Run the attack in _Sniper mode_
+4. Check the responses status code and/or length to identify response.
 
+#### Second order SSTI - Automated - Using SSTI Map /!\NOT IMPLEMENTED YET/!\
+C.f. latest discussions : https://github.com/vladko312/SSTImap/issues/12
 
-#### Manual - Second order
+#### Second order SSTI - Manual - Intruder /!\ ONLY WORKS WITH REDIRECT /!\
+Send the request to _Intruder_, then 
+1. Add the injection point
+2. In the payload list, choose "Fuzzing - template injection"
+3. In the Settings, configure **Follow redirections** to **In-scope only**
+4. In the Resource pool, configure a **Delay between requests** fixed to 1000ms
+5. Run the attack in _Sniper mode_
+6. Check the responses status code and/or length to identify response.
 
 ### Web cache poisoning
 ### HTTP Host header attacks
