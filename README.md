@@ -6,6 +6,7 @@
 - Configure **Logger** to _show_ in-scope items only
 
 ## :o: Extensions
+### :white_check_mark: Extensions to install
 The follwing extensions may be useful :
 - Authorize
 - Upload scanner
@@ -17,6 +18,9 @@ The follwing extensions may be useful :
 - Active Scan ++
 - Logger ++
 - CORS*
+
+### :white_check_mark: Extensions management
+In order to save CPU and memory usage, extensions can be enabled and disabled based on the tests that are currently conducted.
 
 # Methodology
 
