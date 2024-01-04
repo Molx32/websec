@@ -118,6 +118,24 @@ The main command injection objective is to extract data. Multiple ways to achiev
 ### :white_check_mark: Business logic vulnerabilities
 ### :white_check_mark: Information disclosure
 ### :white_check_mark: Access control
+#### Step 1 - Identify logic error
+Authentication may rely on poor access control. The following must be verified :
+- Identify hidden web pages
+- Identify roles
+- Identify leaked credentials (e.g. comments, scripts)
+- Test for role-related vulnerabilities (e.g. self-assignment)
+
+#### Step 2 - Hidden headers
+Authentication control may be bypassed by specifying certain HTTP header e.g. _Referer_.
+1. Right click on the request (_e.g._ /admin)
+2. Select Extensions > Param miner
+3. Scan everything
+4. Observe results
+
+#### Step 3 - Test IDORs using Authorize
+_Burp suite extension : Authorize_
+TODO : [doc](https://authorizedentry.medium.com/how-to-use-autorize-fcd099366239)
+
 ### :white_check_mark: File upload
 _Burp suite extension : Upload Scanner_
 
