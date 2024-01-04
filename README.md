@@ -260,14 +260,22 @@ xhr.send();
 ### :white_check_mark: WebSockets
 ### :white_check_mark: Insecure deserialization
 #### Java
+_Burp suite extensions : Java Deserialization Scanner_
+
 ##### Install JDK 8
-1. Download from [Oracle website](https://www.oracle.com/fr/java/technologies/javase/javase8-archive-downloads.html)
-2. Install Burp extension Java Deserialization Scanner
-3. Extension - Configure Java path to `C:\Program Files\Java\jdk1.8.0_202\java.exe`
-4. Extension - Configure Ysoserial path to `C:\Users\cleme\Documents\01 - Bugbounty\TRAINING\YSOSERIAL\ysoserial-all.jar`
+1. Download JDK from [Oracle website](https://www.oracle.com/fr/java/technologies/javase/javase8-archive-downloads.html)
+2. Download ysoserial from [Github](https://github.com/frohoff/ysoserial/releases/tag/v0.0.6)
+3. Install Burp extension Java Deserialization Scanner
+4. Extension - Configure Java path to `C:\Program Files\Java\jdk1.8.0_202\java.exe`
+5. Extension - Configure Ysoserial path to `C:\Users\cleme\Documents\01 - Bugbounty\TRAINING\YSOSERIAL\ysoserial-all.jar`
 
 ##### Exploit
-###### OOBs exploits
+Send the request to Extensions > Java Deserialization Scanner >
+- Manual to run multiple exploits at once
+- Exploit to run specific exploit
+**Note** : in the _Manual_ tab, the extension does not support all _ysoserial_ payloads. However, all payloads can be tested in the _Exploit_ tab.
+
+##### OOBs exploits
 Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserialization/ysoserial.py) to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
 
 #### PHP
