@@ -20,7 +20,7 @@ The follwing extensions may be useful :
 
 # Methodology
 
-## Step 1 - Discover attack surface
+## :o: Step 1 - Discover attack surface
 ### :white_check_mark: Crawl target
 The objective is to have as much information (_i.e._ web pages) as possible on our target.
 1. Go on the _Dashboard_ tab
