@@ -71,6 +71,10 @@ On the _Target_ tab :
 3. Click on _Find scripts_
 Check if interesting data can be found.
 
+### Check anomalies
+Anomalies are suspect behaviors that may or may not be harmful.
+- 302 Redirect with a body
+
 ### Analyze cookies
 
 ## Step 2 - Identify sensitive features
