@@ -209,6 +209,18 @@ Manual scan is needed because the extension can't test some cases :
 
 ### :white_check_mark: Race conditions
 ### :white_check_mark: Server-side request forge (SSRF)
+
+#### Automated - Built-in scan
+Right click on the suspicious parameter and click _Scan selected insertion point_.
+
+#### Manual - Intruder
+Send the request to Intruder :
+1. Add the injection point
+2. In the payload list, add "SSRF targets"
+3. In the payload list, add any custom endpoint e.g. 192.168.0.X
+4. Run the attack in _Sniper mode_
+5. Check the responses status code and/or length to identify response.
+
 ### :white_check_mark: Path traversal
 #### LFI fuzzing
 For fuzzing lists, use:
