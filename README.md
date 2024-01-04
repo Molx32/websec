@@ -41,10 +41,18 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 
 ### NoSQL injections
 ### Authentication
-### Path traversal
-#### Step 1 - Scan
+### :white_check_mark: Path traversal
+#### Step 1 - Built-in scanner
 - Use the built-in scanner : right-click the filename (e.g. https://example.com/?filename=text.jpg) and scan the selected insertion point.
 
+#### Step 2 - Intruder
+Send the upload request to _Intruder_, then 
+1. Add the file name as the string to fuzz :
+  - Fuzz the entire file name _e.g._ `filename=$fuzz$"`.
+  - Fuzz only a part of the file name _e.g._ `filename=/my/path/$fuzz$"`.
+2. In the payload list, choose "Fuzzing - Path traversal"
+3. Run the attack in _Sniper mode_
+4. Check the responses status code and/or length to identify filtered extensions.
 
 ### Command injection
 _Burp suite extension : Active scan++ | Collaborator everywhere_
