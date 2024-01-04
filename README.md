@@ -364,10 +364,17 @@ Check all the results to see if the injection was sucessful. If it is, modify it
 
 
 ### :white_check_mark: HTTP Host header attacks
-#### Automated scan
+_Burp suite extensions : Param miner_
+
+#### Automated - Built-in scans
 1. Run Param Miner extension with all scans
 2. Run `can selected insertion point` on the host header
-#### Check reflection in response headers
+
+#### Manual - Using Intruder
+Send the request to Intruder :
+1. Scan the host header using a hostname list (e.g. 127.0.0.1, localhost, etc.)
+2. Scan the host header subdomains using a subdomain list (e.g. internal --> internal.target.com)
+Observed any response status or response length difference.
 
 ### :white_check_mark: HTTP request smuggling
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
