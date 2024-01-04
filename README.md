@@ -20,11 +20,56 @@ The follwing extensions may be useful :
 
 # Methodology
 
-## Step 1 - Enumeration
-### Directory fuzzing
-Directory fuzzing list [here](https://github.com/danielmiessler/SecLists/blob/master/Discovery/Web-Content/dirsearch.txt)
+## Step 1 - Discover attack surface
+### Crawl target
+The objective is to have as much information (_i.e._ web pages) as possible on our target.
+1. Go on the _Dashboard_ tab
+2. Click on New scan
+3. Configure Crawl only
+4. Run
+This will add web pages on the _Target_ tab.
 
 ### Directory fuzzing
+The objective is to have as much information (_i.e._ web pages) as possible on our target.
+Send the root request (/) to _Intruder_, then :
+1. Add the injection point at the end of the path e.g. `GET /$fuzz$ HTTP/2`
+2. In the payload list, choose "Directories - Long"
+3. Run the attack in _Sniper mode_
+4. Check the responses status code and/or length to identify response.
+This will add web pages on the _Target_ tab.
+
+### File fuzzing
+The objective is to have as much information (_i.e._ web pages) as possible on our target.
+Send the root request (/) to _Intruder_, then :
+1. Add the injection point at the end of the path e.g. `GET /$fuzz$ HTTP/2`
+2. In the payload list, choose "Filenames - Long"
+3. Run the attack in _Sniper mode_
+4. Check the responses status code and/or length to identify response.
+This will add web pages on the _Target_ tab.
+
+An alternative recon should be done with different file extensions.
+
+## Step 2 - Analyze the attack surface
+### Analyze refrences (URLs found in code)
+On the _Target_ tab :
+1. Right-click the website root
+2. Click on _Engagement tools_
+3. Click on _Find references_
+Check if new in-scope URLs can be found.
+
+### Analyze comments
+On the _Target_ tab :
+1. Right-click the website root
+2. Click on _Engagement tools_
+3. Click on _Find comments_
+Check if interesting data can be found.
+
+### Analyze scripts
+On the _Target_ tab :
+1. Right-click the website root
+2. Click on _Engagement tools_
+3. Click on _Find scripts_
+Check if interesting data can be found.
 
 ## Step 2 - Identify sensitive features
 ### Password
