@@ -380,10 +380,10 @@ Observed any response status or response length difference.
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
 
 #### Summary
-🔵 1st request
-⚪ 2nd request
-🔴 3rd request
-➡️⬅️ Content-Length interpreted by the server
+- 🔵 1st request
+- ⚪ 2nd request
+- 🔴 3rd request
+- ➡️⬅️ Content-Length interpreted by the server
 
 ##### CL.TE
 In that scenario :
