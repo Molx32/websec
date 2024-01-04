@@ -71,6 +71,8 @@ On the _Target_ tab :
 3. Click on _Find scripts_
 Check if interesting data can be found.
 
+### Analyze cookies
+
 ## Step 2 - Identify sensitive features
 ### Password
 - Password reset
