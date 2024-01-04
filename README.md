@@ -42,6 +42,10 @@ Oracle - `'||(select extractvalue(xmltype('<?xml version="1.0" encoding="UTF-8"?
 ### NoSQL injections
 ### Authentication
 ### Path traversal
+#### Step 1 - Scan
+- Use the built-in scanner : right-click the filename (e.g. https://example.com/?filename=text.jpg) and scan the selected insertion point.
+
+
 ### Command injection
 _Burp suite extension : Active scan++ | Collaborator everywhere_
 The main command injection objective is to extract data. Multiple ways to achieve this :
