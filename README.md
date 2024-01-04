@@ -390,8 +390,8 @@ In that scenario :
 - The front end relies on Content-Length
 - The back-end relies on Transfer-Encoding
 
+Front end interpretation :
 ```
-*** FRONT END INTERPRETATION ***
 🔵 POST / HTTP/1.1
 🔵 Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
 🔵 Content-Type: application/x-www-form-urlencoded
@@ -406,6 +406,7 @@ In that scenario :
 🔵 X-Ignore: X⬅️
 ```
 
+Back end interpretation :
 ```
 *** BACK END INTERPRETATION ***
 🔵 POST / HTTP/1.1
