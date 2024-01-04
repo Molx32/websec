@@ -270,7 +270,21 @@ xhr.send();
 ###### OOBs exploits
 Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserialization/ysoserial.py) to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
 
-#### Others
+#### PHP
+⚠️ TODO - Add information from [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/PHP.md)
+
+#### Ruby
+⚠️TODO - Add information from [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/Ruby.md)
+
+#### Python
+⚠️TODO - Add information from [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/Python.md)
+
+#### .Net
+⚠️TODO - Add information from [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/DotNET.md)
+
+#### Node
+⚠️TODO - Add information from [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/Node.md)
+
 ### :white_check_mark: GraphQL API vulnerabilities
 ### :white_check_mark: Server-side template injection
 _Burp suite extensions : None_
