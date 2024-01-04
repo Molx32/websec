@@ -207,10 +207,10 @@ Send the request to _Intruder_, then
 3. Run the attack in _Sniper mode_
 4. Check the responses status code and/or length to identify response.
 
-#### Second order SSTI - Automated - Using SSTI Map /!\NOT IMPLEMENTED YET/!\
+#### :warning: NOT IMPLEMENTED YET :warning: Second order SSTI - Automated - Using SSTI Map
 C.f. latest discussions : https://github.com/vladko312/SSTImap/issues/12
 
-#### Second order SSTI - Manual - Intruder /!\ ONLY WORKS WITH REDIRECT /!\
+#### :warning: ONLY WORKS WITH REDIRECT :warning: Second order SSTI - Manual - Intruder
 Send the request to _Intruder_, then 
 1. Add the injection point
 2. In the payload list, choose "Fuzzing - template injection"
@@ -219,6 +219,8 @@ Send the request to _Intruder_, then
 5. Run the attack in _Sniper mode_
 6. Check the responses status code and/or length to identify response.
 Check all the results to see if the injection was sucessful. If it is, modify it to exploit it.
+
+#### ⚠️TODO : find a payload list for all kind of template
 
 ### Web cache poisoning
 ### HTTP Host header attacks
