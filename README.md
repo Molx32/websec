@@ -273,10 +273,13 @@ _Burp suite extensions : Java Deserialization Scanner_
 Send the request to Extensions > Java Deserialization Scanner >
 - Manual to run multiple exploits at once
 - Exploit to run specific exploit
+
 **Note** : in the _Manual_ tab, the extension does not support all _ysoserial_ payloads. However, all payloads can be tested in the _Exploit_ tab.
 
 ##### OOBs exploits
-Leverage [Python wrapper](https://github.com/Molx32/websec/blob/main/deserialization/ysoserial.py) to get all payloads in a file, then use Intruder and wait for collaborator to retrieve DNS calls.
+```
+ping pibyxv5bsfgyzjnl2digrwv58wen2fq4.oastify.com
+```
 
 #### PHP
 ⚠️ TODO - Add information from [here](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Insecure%20Deserialization/PHP.md)
