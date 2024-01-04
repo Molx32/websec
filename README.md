@@ -21,7 +21,7 @@ The follwing extensions may be useful :
 # Methodology
 
 ## Step 1 - Discover attack surface
-### Crawl target
+### :white_check_mark: Crawl target
 The objective is to have as much information (_i.e._ web pages) as possible on our target.
 1. Go on the _Dashboard_ tab
 2. Click on New scan
@@ -29,7 +29,7 @@ The objective is to have as much information (_i.e._ web pages) as possible on o
 4. Run
 This will add web pages on the _Target_ tab.
 
-### Directory fuzzing
+### :white_check_mark: Directory fuzzing
 The objective is to have as much information (_i.e._ web pages) as possible on our target.
 Send the root request (/) to _Intruder_, then :
 1. Add the injection point at the end of the path e.g. `GET /$fuzz$ HTTP/2`
@@ -38,7 +38,7 @@ Send the root request (/) to _Intruder_, then :
 4. Check the responses status code and/or length to identify response.
 This will add web pages on the _Target_ tab.
 
-### File fuzzing
+### :white_check_mark: File fuzzing
 The objective is to have as much information (_i.e._ web pages) as possible on our target.
 Send the root request (/) to _Intruder_, then :
 1. Add the injection point at the end of the path e.g. `GET /$fuzz$ HTTP/2`
@@ -50,32 +50,35 @@ This will add web pages on the _Target_ tab.
 An alternative recon should be done with different file extensions.
 
 ## Step 2 - Analyze the attack surface
-### Analyze refrences (URLs found in code)
+### :white_check_mark: Analyze refrences (URLs found in code)
 On the _Target_ tab :
 1. Right-click the website root
 2. Click on _Engagement tools_
 3. Click on _Find references_
 Check if new in-scope URLs can be found.
 
-### Analyze comments
+### :white_check_mark: Analyze comments
 On the _Target_ tab :
 1. Right-click the website root
 2. Click on _Engagement tools_
 3. Click on _Find comments_
 Check if interesting data can be found.
 
-### Analyze scripts
+### :white_check_mark: Analyze scripts
 On the _Target_ tab :
 1. Right-click the website root
 2. Click on _Engagement tools_
 3. Click on _Find scripts_
 Check if interesting data can be found.
 
-### Check anomalies
+### Find hidden headers
+Use Param Miner automatically?!
+
+### :white_check_mark: Check anomalies
 Anomalies are suspect behaviors that may or may not be harmful.
 - 302 Redirect with a body
 
-### Analyze cookies
+### :white_check_mark: Analyze cookies
 
 ## Step 2 - Identify sensitive features
 ### Password
