@@ -124,6 +124,9 @@ Authentication may rely on poor access control. The following must be verified :
 - Identify roles
 - Identify leaked credentials (e.g. comments, scripts)
 - Test for role-related vulnerabilities (e.g. self-assignment)
+- Test a _Referer_ identical to the target page _e.g._ `Referer: https://example.org/admin`
+- Test different HTTP methods
+- Try to pass arguments as GET rather than POST (and vice versa)
 
 #### Step 2 - Hidden headers
 Authentication control may be bypassed by specifying certain HTTP header e.g. _Referer_.
@@ -307,6 +310,8 @@ Check all the results to see if the injection was sucessful. If it is, modify it
 #### ⚠️TODO : find a payload list for all kind of template
 
 ### :white_check_mark: Web cache poisoning
+
+
 ### :white_check_mark: HTTP Host header attacks
 #### Automated scan
 1. Run Param Miner extension with all scans
