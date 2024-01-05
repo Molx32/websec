@@ -239,6 +239,11 @@ Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 ```
 ### :white_check_mark: Cross-site scripting (XSS)
 ### :white_check_mark: Cross-site request forge (CSRF)
+_Burp suite extensions : CSRF Scanner_
+The extension is limited and does not perform many checks. Thus, the following should be tested :
+- Change method
+- Remove CSRF token field
+- Remove CSRF token value
 
 #### Automated
 Find a request to CSRF, then right click : Engagement tool > Generate CRSF PoC. This produce a code sample that should can be exploited as is.
