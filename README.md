@@ -101,7 +101,9 @@ Use Param Miner automatically?!
 
 ### :white_check_mark: Check anomalies
 Anomalies are suspect behaviors that may or may not be harmful.
-- 302 Redirect with a body
+- Analyze 302 Redirect with a body
+- Analyze any method overide (_method=POST) (Param miner)
+- Analyze any header weird behavior (Param miner)
 
 ### :white_check_mark: Analyze cookies
 
