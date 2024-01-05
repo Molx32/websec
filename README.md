@@ -244,6 +244,7 @@ The extension is limited and does not perform many checks. Thus, the following s
 - Change method
 - Remove CSRF token field
 - Remove CSRF token value
+- Let the CSRF token as is
 
 #### Automated
 Find a request to CSRF, then right click : Engagement tool > Generate CRSF PoC. This produce a code sample that should can be exploited as is.
