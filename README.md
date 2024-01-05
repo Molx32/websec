@@ -68,12 +68,14 @@ On the _Target_ tab :
 3. Click on _Find comments_
 Check if interesting data can be found.
 
-### :white_check_mark: Analyze scripts
+### :white_check_mark: Analyze CORS reponses
 On the _Target_ tab :
 1. Right-click the website root
-2. Click on _Engagement tools_
-3. Click on _Find scripts_
+2. Click on _Search_
+3. Type _Access-Control-Allow-Origin_
 Check if interesting data can be found.
+
+### :white_check_mark: Analyze scripts
 
 ### :white_check_mark: Analyze errors
 Error message can contain stack trace and other useful information.
