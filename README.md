@@ -555,5 +555,5 @@ Online tool - [CyberChef](https://gchq.github.io/CyberChef)
   - 🛡️Lax - When the requests originates from a different domain or scheme, the cookie is sent if
     - The HTTP method is GET
     - The request was created from a top-level navigation by the user such as a click. This means that the cookie is not included in background requests initiated by a script, iframe, etc.
-  - 🎯None - The cookie is always included.
+  - 🎯None - The cookie is always included. When set to None, the **Secure** attribute must be specified.
 - [Secure](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure) - The cookie is sent only when using https:// attribute is used to ensure the cookie is only used with
