@@ -98,8 +98,13 @@ In the _Target_ tab :
   - "Debug"
   - Etc...
 
-### Find hidden headers
+### Find hidden or suspiciou headers
 Use Param Miner automatically?!
+
+#### Examples of headers :
+- Referer - Modifying this header might bypass access-control
+- Origin - Modifying this header might bypass access-control
+- 
 
 ### :white_check_mark: Check anomalies
 Anomalies are suspect behaviors that may or may not be harmful.
@@ -560,4 +565,4 @@ Online tool - [CyberChef](https://gchq.github.io/CyberChef)
     - The HTTP method is GET
     - The request was created from a top-level navigation by the user such as a click. This means that the cookie is not included in background requests initiated by a script, iframe, etc.
   - 🎯None - The cookie is always included. When set to None, the **Secure** attribute must be specified.
-- [Secure](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie#secure) - The cookie is sent only when using https:// attribute is used to ensure the cookie is only used with
+- [Secure](https://developer.mozilla.org/en-US/docs/Web/HTTP/s/Set-Cookie#secure) - The cookie is sent only when using https:// attribute is used to ensure the cookie is only used with
