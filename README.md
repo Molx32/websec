@@ -53,6 +53,11 @@ This will add web pages on the _Target_ tab.
 
 An alternative recon should be done with different file extensions.
 
+### :white_check_mark: Various fuzzing
+The objective is to have as much information (_i.e._ web pages) as possible on our target.
+1. Select URI in the HTTP request (e.g. _/my/request_)
+2. Right click and select _Scan the selected insertion point_.
+
 ## :o: Step 2 - Analyze the attack surface
 ### :white_check_mark: Analyze refrences (URLs found in code)
 On the _Target_ tab :
